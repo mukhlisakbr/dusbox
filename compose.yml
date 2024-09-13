@@ -1,0 +1,19 @@
+services:
+  aria2-ariang:
+    image: hurlenko/aria2-ariang
+    container_name: aria2-ariang
+    restart: unless-stopped
+    ports:
+      - 443:443
+    volumes:
+      - ./data:/aria2/data
+      - ./conf:/aria2/conf
+      - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile
+      - ./caddy/data:/usr/local/caddy/data
+    environment:
+      - RPC_SECRET=secret # change me
+      - ARIA2RPCPORT=443
+      - EMBED_RPC_SECRET=true
+      - BASIC_AUTH_USERNAME=admin # change me
+      - BASIC_AUTH_PASSWORD=admin # change me
+      - DOMAIN=https://example.com # change me

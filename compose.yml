@@ -1,6 +1,6 @@
 services:
   aria2-ariang:
-    image: hurlenko/aria2-ariang
+    image: hurlenko/aria2-ariang:1.3.7
     container_name: dusbox-aria2-ariang
     restart: unless-stopped
     ports:
@@ -14,7 +14,7 @@ services:
       - ./start.sh:/aria2/start.sh
 
   filebrowser:
-    image: filebrowser/filebrowser
+    image: filebrowser/filebrowser:v2.31.1
     container_name: dusbox-filebrowser
     restart: unless-stopped
     volumes:
@@ -23,7 +23,7 @@ services:
       - ./filebrowser/config.json:/.filebrowser.json
 
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
+    image: lscr.io/linuxserver/jellyfin:10.9.11
     container_name: jellyfin
     environment:
       - PUID=0

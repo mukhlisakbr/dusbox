@@ -21,3 +21,5 @@ services:
     volumes:
       - ./data:/srv
       - ./filebrowser/database.db:/database.db
+    command:
+      ["sh", "-c", "filebrowser config set --baseurl /files && filebrowser"]

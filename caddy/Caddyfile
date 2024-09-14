@@ -6,7 +6,9 @@
 reverse_proxy /jsonrpc 127.0.0.1:6800
 reverse_proxy /rpc 127.0.0.1:6800
 reverse_proxy /files* filebrowser:8080
-reverse_proxy /jellyfin* jellyfin:8096/web
+reverse_proxy /jellyfin/* http://jellyfin:8096 {
+  rewrite /jellyfin/* /{uri}
+}
 
 root * /usr/local/www/ariang
 file_server

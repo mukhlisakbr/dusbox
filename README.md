@@ -9,3 +9,10 @@ cp .env.sample .env
 # Edit the .env file to change values as needed
 docker compose up -d
 ```
+
+## Accessing Services
+
+- **AriaNg**: [https://domain.com](https://domain.com)
+- **Filebrowser**: [https://domain.com/files](https://domain.com/files)
+
+Auto SSL is enabled by default, so make sure your domain is pointing to your server first.

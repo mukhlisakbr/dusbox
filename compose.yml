@@ -24,7 +24,7 @@ services:
 
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:10.9.11
-    container_name: jellyfin
+    container_name: dusbox-jellyfin
     environment:
       - PUID=0
       - PGID=0

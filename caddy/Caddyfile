@@ -6,12 +6,7 @@
 reverse_proxy /jsonrpc 127.0.0.1:6800
 reverse_proxy /rpc 127.0.0.1:6800
 reverse_proxy /files* filebrowser:8080
-handle_path /jellyfin* {
-	reverse_proxy jellyfin:8096 {
-    header_up Host {http.reverse_proxy.upstream.hostport}
-    header_down Location {http.reverse_proxy.upstream.hostport}
-  }
-}
+reverse_proxy /jellyfin* jellyfin:8096
 
 root * /usr/local/www/ariang
 file_server

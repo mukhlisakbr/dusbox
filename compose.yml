@@ -16,8 +16,6 @@ services:
   filebrowser:
     image: filebrowser/filebrowser
     container_name: dusbox-filebrowser
-    ports:
-      - "8080:80"
     volumes:
       - ./data:/srv
       - ./filebrowser/database.db:/database.db

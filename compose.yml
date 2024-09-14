@@ -16,7 +16,22 @@ services:
   filebrowser:
     image: filebrowser/filebrowser
     container_name: dusbox-filebrowser
+    restart: unless-stopped
     volumes:
       - ./data:/srv
       - ./filebrowser/database.db:/database.db
       - ./filebrowser/config.json:/.filebrowser.json
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Etc/UTC
+    volumes:
+      - ./jellyfin/config:/config
+      - ./data:/data
+    ports:
+      - 8096:8096
+    restart: unless-stopped

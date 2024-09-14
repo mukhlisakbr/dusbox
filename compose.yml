@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     ports:
       - "443:443"
+    env_file: .env
     volumes:
       - ./data:/aria2/data
       - ./conf:/aria2/conf

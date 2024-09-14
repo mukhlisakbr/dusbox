@@ -9,5 +9,5 @@ services:
     volumes:
       - ./data:/aria2/data
       - ./conf:/aria2/conf
-      - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile
+      - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile:ro
       - ./caddy/data:/root/.local/share/caddy

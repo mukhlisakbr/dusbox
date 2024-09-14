@@ -11,3 +11,4 @@ services:
       - ./conf:/aria2/conf
       - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile:ro
       - ./caddy/data:/root/.local/share/caddy
+      - ./start.sh:/aria2/start.sh

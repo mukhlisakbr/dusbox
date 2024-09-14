@@ -7,8 +7,8 @@ services:
       - "443:443"
     env_file: .env
     volumes:
-      - ./data:/aria2/data
-      - ./conf:/aria2/conf
+      - ./aria2-ariang/data:/aria2/data
+      - ./aria2-ariang/conf:/aria2/conf
       - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile
       - ./caddy/data:/root/.local/share/caddy
       - ./start.sh:/aria2/start.sh
@@ -18,7 +18,7 @@ services:
     container_name: dusbox-filebrowser
     restart: unless-stopped
     volumes:
-      - ./data:/srv
+      - ./aria2-ariang/data:/srv
       - ./filebrowser/database.db:/database.db
       - ./filebrowser/config.json:/.filebrowser.json
 
@@ -31,7 +31,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - ./jellyfin/config:/config
-      - ./data:/data
+      - ./aria2-ariang/data:/data
     ports:
       - 8096:8096
     restart: unless-stopped

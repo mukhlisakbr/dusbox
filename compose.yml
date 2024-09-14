@@ -21,5 +21,4 @@ services:
     volumes:
       - ./data:/srv
       - ./filebrowser/database.db:/database.db
-    entrypoint:
-      ["sh", "-c", "/filebrowser config set --baseurl /files && /filebrowser"]
+      - ./filebrowser/config.json:/.filebrowser.json

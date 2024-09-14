@@ -22,12 +22,16 @@ if [ -n "$RPC_SECRET" ]; then
 fi
 
 if [ -n "$BASIC_AUTH_USERNAME" ] && [ -n "$BASIC_AUTH_PASSWORD" ]; then
-    echo "Enabling caddy basic auth"
-    echo "
+    if ! grep -q "basicauth / {" /usr/local/caddy/Caddyfile; then
+        echo "Enabling caddy basic auth"
+        echo "
         basicauth / {
             $BASIC_AUTH_USERNAME $(caddy hash-password -plaintext "${BASIC_AUTH_PASSWORD}")
         }
-    " >>/usr/local/caddy/Caddyfile
+        " >>/usr/local/caddy/Caddyfile
+    else
+        echo "Basic auth already enabled in Caddyfile"
+    fi
 fi
 
 touch $conf_path/aria2.session

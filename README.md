@@ -2,7 +2,7 @@
 
 Quickly turn your server into a media box for downloads, uploads, and streaming with Docker, Aria2, AriaNg, and Filebrowser.
 
-## Quick Start
+### Quick Start
 
 ```sh
 cp .env.sample .env
@@ -10,7 +10,7 @@ cp .env.sample .env
 docker compose up -d
 ```
 
-## Accessing Services
+### Accessing Services
 
 | Service         | URL                                                  |
 | --------------- | ---------------------------------------------------- |

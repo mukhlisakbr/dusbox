@@ -21,4 +21,3 @@ services:
     volumes:
       - ./data:/srv
       - ./filebrowser/database.db:/database.db
-    user: "${UID}:${GID}" # Replace with UID:GID or dynamically set from the environment
